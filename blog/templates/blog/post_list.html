@@ -6,17 +6,12 @@
         <div>
             <h1><a href="/">Моя страница</a> </h1>
         </div>
-
-        <div>
-            <p>Опубликовано: 08.03.2021, 21:37</p>
-            <h2><a href="">Мой первый пост</a> </h2>
-            <p>Text for first post</p>
-        </div>
-
-        <div>
-            <p>Опубликовано: 09.03.2021, 00:12</p>
-            <h2><a href="">Мой второй пост</a> </h2>
-            <p>Этот текст предназначен в качестве второго поста</p>
-        </div>
+        {%  for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a> </h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
